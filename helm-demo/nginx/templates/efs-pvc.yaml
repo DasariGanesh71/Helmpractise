@@ -1,4 +1,4 @@
-apiVersion: v1
+    apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: nginx-efs-pvc
@@ -8,11 +8,3 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ""
-  csi:
-    driver: efs.csi.aws.com
-    volumeHandle: fs-06ab7a7ac3a9c5325
-    mountOptions:
-      - "addr=10.0.102.139"
-      - "tls"
-      
