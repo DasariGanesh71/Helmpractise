@@ -17,3 +17,10 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: efs-logs
+              mountPath: /var/log/nginx
+      volumes:
+        - name: efs-logs
+          persistentVolumeClaim:
+            claimName: nginx-efs-pvc
