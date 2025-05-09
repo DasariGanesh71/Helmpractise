@@ -2,6 +2,7 @@
 kind: PersistentVolumeClaim
 metadata:
   name: nginx-efs-pvc
+  namespace: prod
 spec:
   accessModes:
     - ReadWriteMany
