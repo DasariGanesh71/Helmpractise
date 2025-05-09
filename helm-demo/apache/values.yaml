@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: httpd
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+efs:
+  volumeHandle: fs-06ab7a7ac3a9c5325  # Replace with your EFS ID
+  storage: 5Gi
