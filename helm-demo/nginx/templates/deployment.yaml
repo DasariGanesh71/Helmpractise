@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  namespace: prod
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -14,6 +15,13 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: nginx:latest
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: efs-logs
+              mountPath: /var/log/nginx
+      volumes:
+        - name: efs-logs
+          persistentVolumeClaim:
+            claimName: nginx-efs-pvc
