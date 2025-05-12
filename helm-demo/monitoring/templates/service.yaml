@@ -5,7 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   type: LoadBalancer
-  loadBalancerIP: <EXISTING-LOADBALANCER-IP>
+  loadBalancerIP: a5be16d5239874f39a5bbc7943cae151-0739733cdfa61156.elb.ap-south-1.amazonaws.com
   selector:
     app: grafana
   ports:
