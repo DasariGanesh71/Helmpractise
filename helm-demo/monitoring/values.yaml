@@ -12,14 +12,29 @@ prometheus:
       - job_name: 'node-exporter'  # Collects system metrics
         static_configs:
           - targets: ['node-exporter-service.monitoring.svc.cluster.local:9100']
-      
+        relabel_configs:  # Ensure correct labeling of scraped metrics
+          - source_labels: [__address__]
+            target_label: instance
+            regex: "(.*):.*"
+            replacement: "$1"
+
       - job_name: 'cadvisor'  # Collects container metrics
         static_configs:
           - targets: ['cadvisor-service.monitoring.svc.cluster.local:8080']
-      
+        relabel_configs:
+          - source_labels: [__address__]
+            target_label: instance
+            regex: "(.*):.*"
+            replacement: "$1"
+
       - job_name: 'kube-state-metrics'  # Collects Kubernetes object status
         static_configs:
           - targets: ['kube-state-metrics-service.monitoring.svc.cluster.local:8080']
+        relabel_configs:
+          - source_labels: [__address__]
+            target_label: instance
+            regex: "(.*):.*"
+            replacement: "$1"
 
 grafana:
   adminUser: "newadmin"  # Updated username
