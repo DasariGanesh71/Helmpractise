@@ -1,0 +1,10 @@
+prometheus:
+  global:
+    scrape_interval: 30s
+  server:
+    persistentVolume:
+      enabled: true
+grafana:
+  adminPassword: "admin123"
+  service:
+    type: LoadBalancer
