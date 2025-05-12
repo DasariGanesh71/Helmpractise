@@ -8,6 +8,7 @@ dependencies:
   - name: kube-prometheus-stack
     version: "39.0.0"  # Replace this with latest chart version
     repository: "https://prometheus-community.github.io/helm-charts"
+dependencies:
   - name: grafana
-    version: "6.56.2"  # Replace this with latest Grafana version
+    version: "6.56.2"  # Check latest version with 'helm search repo grafana/grafana'
     repository: "https://grafana.github.io/helm-charts"
