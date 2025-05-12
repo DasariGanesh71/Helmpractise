@@ -1,4 +1,5 @@
 apiVersion: v2
-name: apache-nginx-ingress
-description: Ingress for Apache and NGINX path routing
+name: ingress
+description: Central ingress routing for NGINX and Apache
 version: 0.1.0
+appVersion: "1.0"
