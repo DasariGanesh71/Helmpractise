@@ -1,9 +1,1 @@
-ingress:
-  className: nginx
-  paths:
-    - path: /nginx
-      serviceName: nginx
-      servicePort: 80
-    - path: /apache
-      serviceName: apache
-      servicePort: 80
+
