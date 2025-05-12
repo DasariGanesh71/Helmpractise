@@ -6,7 +6,8 @@ prometheus:
       enabled: true
 
 grafana:
-  adminPassword: "admin123"
+  adminUser: "newadmin"  # Updated username
+  adminPassword: "NewStrongPassword123"  # Updated password
   service:
     type: LoadBalancer
   sidecar:
