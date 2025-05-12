@@ -4,7 +4,11 @@ prometheus:
   server:
     persistentVolume:
       enabled: true
+
 grafana:
   adminPassword: "admin123"
   service:
     type: LoadBalancer
+  sidecar:
+    alerts:
+      enabled: false  # Explicitly set it to 'false' if you don't need alerts
