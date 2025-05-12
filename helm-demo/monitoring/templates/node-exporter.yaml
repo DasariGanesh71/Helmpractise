@@ -23,7 +23,6 @@ spec:
             - --collector.cpu
             - --collector.loadavg
             - --collector.filesystem
-            - --collector.memory
       hostNetwork: true
       hostPID: true
       tolerations:
