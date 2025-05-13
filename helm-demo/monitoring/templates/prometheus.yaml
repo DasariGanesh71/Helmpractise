@@ -18,3 +18,12 @@ spec:
         image: prom/prometheus:latest
         ports:
         - containerPort: 9090
+        args:
+        - "--config.file=/etc/prometheus/prometheus.yml"  # Point to the config file
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/prometheus
+      volumes:
+      - name: config-volume
+        configMap:
+          name: prometheus-config  # Reference the ConfigMap
