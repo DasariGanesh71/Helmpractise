@@ -14,7 +14,7 @@ spec:
         app: kube-state-metrics
     spec:
       containers:
-      - name: kube-state-metrics
-        image: quay.io/coreos/kube-state-metrics:v2.5.0
-        ports:
-        - containerPort: 8080
+        - name: kube-state-metrics
+          image: registry.k8s.io/kube-state-metrics:v2.10.0
+          ports:
+          - containerPort: 8080
